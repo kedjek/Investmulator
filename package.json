@@ -1,0 +1,39 @@
+{
+  "name": "solo-project",
+  "version": "1.0.0",
+  "description": "Stock tracking for users",
+  "main": "index.js",
+  "scripts": {
+    "test": "\"echo \\ \"Error: no testing specified\\\" && exit 1\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kedjek/Solo-Project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kedjek/Solo-Project/issues"
+  },
+  "homepage": "https://github.com/kedjek/Solo-Project#readme",
+  "dependencies": {
+    "eslint": "^8.49.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.28.1",
+    "eslint-plugin-react": "^7.33.2",
+    "express": "^4.18.2",
+    "jest": "^29.7.0",
+    "nodemon": "^3.0.1",
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-redux": "^8.1.2",
+    "redux": "^4.2.1",
+    "redux-devtools-extension": "^2.13.9",
+    "sass": "^1.66.1",
+    "sass-loader": "^13.3.2",
+    "style-loader": "^3.3.3",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
+  }
+}
