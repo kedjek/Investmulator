@@ -10,8 +10,30 @@ People are scared to invest due to lack of knowledge & financial risk. This will
 A tool that gives people an account, a set salary savings per week, track S&P 500 as well as their individual stock prices, ability for users to buy & sell.
 
 
+
+
+
+
+
+
+
 4. What is the MVP scope? (core features you must get working)
-Display website, user, stocks, user feature to buy and sell stocks.
+--IN PROGRESS-- 
+create and save user
+log in with user
+retrive S&P 500 data
+user feature to buy and sell stocks
+
+-----DONE----
+Display website,
+
+
+
+
+
+
+
+
 
 
 5. What are the tough technical challenges involved with solving this problem?

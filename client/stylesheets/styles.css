@@ -1,0 +1,39 @@
+body {
+    line-height: 1.5;
+    font-family: 'Source Sans Pro', sans-serif;
+    background-color: rgba(238, 172, 86, 0.719);
+  }
+header{
+  margin-top: 3em;
+  margin-bottom: 5em;
+  text-align: center;
+}
+form {
+  max-width: 20em;
+  margin: 0 auto;
+  text-align: right;
+}
+
+input {
+  padding: 0.3em;
+  margin-bottom: 1em;
+  border: 0.1em solid #ccc;
+  border-radius: 0.3em;
+  font-size: 1em;
+}
+
+button {
+  padding: 0.7em;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 0.2em;
+  cursor: pointer;
+  font-size: 0.8em;
+  width: 6em;
+  margin-left: 10em;
+}
+
+a{
+  color:cornflowerblue;
+}
