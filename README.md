@@ -19,15 +19,14 @@ A tool that gives people an account, a set salary savings per week, track S&P 50
 
 4. What is the MVP scope? (core features you must get working)
 --IN PROGRESS-- 
-create and save user
-log in with user
 retrive S&P 500 data
+display S&P 500 data, user buying power
 user feature to buy and sell stocks
 
 -----DONE----
 Display website,
-
-
+create and save user
+log in with user
 
 
 
