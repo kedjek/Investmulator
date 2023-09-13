@@ -13,14 +13,12 @@ A tool that gives people an account, a set salary savings per week, track S&P 50
 
 
 
-
-
-
-
 4. What is the MVP scope? (core features you must get working)
 --IN PROGRESS-- 
-retrive S&P 500 data
-display S&P 500 data, user buying power
+create cookie and track cookie
+retrieve user info using cookie and display on page, username & buying power
+retrive S&P 500 data using an api call
+display S&P 500 data via a graph
 user feature to buy and sell stocks
 
 -----DONE----
