@@ -3,20 +3,23 @@ const express = require('express');
 
 const app = express();
 const port = process.env.PORT || 3000;
+const apiRouter = require('./routes/api');
 
-console.log('is the server running?');
-// statically serve everything in the build folder on the route '/build'
-app.use('/build', express.static(path.join(__dirname, '../build')));
+console.log('im in the server');
 
-app.get('/', (req, res) => {
-  console.log('hello?');
-  return res.status(200).sendFile(path.join(__dirname, './client/index.html'));
-});
+// Handle parsing request body
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-app.get('/createuser', (req, res) => {
-  console.log('im creating user');
-  return res.status(200).sendFile(path.join(__dirname, './client/index.html'));
-});
+
+// statically serve everything in the dist folder on route '/'
+app.use(express.static(path.join(__dirname, '../dist')));
+// Serve static CSS files from the 'css' folder within 'client'
+app.use('/stylesheets', express.static(path.join(__dirname, '../client/stylesheets')));
+// Serve api routing when creating user / logging in
+app.use('/api', apiRouter);
+
+
 
 
 /*catch-all route handler for any requests to an unknown route*/

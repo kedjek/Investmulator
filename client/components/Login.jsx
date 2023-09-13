@@ -8,7 +8,7 @@ const Login = (props) => {
       <label>Password: </label>
       <input id='passwordInput' placeholder='Password' required></input>      
       <br/>
-      <a href='/createuser'>Create User</a>
+      <a href='/api/createuser'>Create User</a>
       <button>Submit</button>
     </form> 
   );
