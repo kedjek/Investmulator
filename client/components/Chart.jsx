@@ -51,16 +51,15 @@ const SP500Chart = () => {
 
   return (
     <div>
-      <h2>S&P 500 Chart</h2>
+      <h1>Data Chart</h1>
       <Line
         data={{
           labels: labels,
           datasets: [
             {
-              label: 'S&P ',
+              label: 'S&P 500',
               data: values,
               backgroundColor: [
-                'rgba(244, 99, 132, 0.2)',
                 'rgba(53, 21, 412, 0.2)',
                 'rgba(151, 241, 231, 0.2)'
               ]

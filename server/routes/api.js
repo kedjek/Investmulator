@@ -27,8 +27,8 @@ router.get('/sp500', async (req, res) => {
         series_id: 'SP500',
         api_key: 'db70964525df983e179376ac2ce9c76a',
         file_type: 'json',
-        frequency: 'w',
-        limit: 600,
+        frequency: 'd',
+        limit: 10000,
       },
     });
     

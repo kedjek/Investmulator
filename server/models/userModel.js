@@ -7,7 +7,8 @@ const Schema = mongoose.Schema;
 const userSchema = new Schema ({
   username: {type: String, required: true, unique: true},
   password: {type: String, required: true},
-  buyingpower: {type: Number, default: 50000}
+  buyingpower: {type: Number, default: 50000},
+  holdings: {type: Object, default:{SP500: 0}}
 });
 
 module.exports = mongoose.model('User', userSchema);
