@@ -13,6 +13,7 @@ router.get('/', sessionController.isLoggedIn,
     console.log('--------------------------------------------------------------');
     const userData = JSON.stringify(req.session.user);
     const indexHtml = fs.readFileSync(path.join(__dirname, '../../dist/index.html'), 'utf-8');
+    console.log(userData);
     const modifiedIndexHtml = indexHtml.replace('<!-- USER_DATA -->', `<script>window.userData = ${userData};</script>`);
     res.status(200).send(modifiedIndexHtml);
   }

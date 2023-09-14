@@ -32,8 +32,8 @@ user feature to buy and sell stocks
 * API call to retrieve S&P 500 stock price and getting pass cor by utilizing axios and proxie server
 * Figuring out Chart.js and displaying graph on page
 * Learning to use Routes and Route to redirect rendering based on server input
-* Combining two routes together to render at the same time was tricky, needed a separate parent combined route component
 * Sending data from server to front end react component via direct html injection
+* Combining two routes together to render at the same time was tricky, needed a separate parent combined route component
 
 
 6. What are the stretch goals?
