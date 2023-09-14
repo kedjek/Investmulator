@@ -2,7 +2,7 @@ import React from 'react';
 
 const Login = (props) => {
   return (
-    <form className='login ' action='/api' method='POST' autoComplete='off'>
+    <form className='loginform ' action='/api' method='POST' autoComplete='off'>
       <label>Username: </label>
       <input id='usernameInput' name='username' placeholder='Username' required></input>
       <label>Password: </label>

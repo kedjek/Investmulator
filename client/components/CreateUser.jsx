@@ -3,7 +3,7 @@ import React from 'react';
 const CreateUser = (props) => {
 
   return (
-    <div className='login'>
+    <div className='loginform'>
       <h1>Sign Up</h1>
       <form action='/api/createuser' method='POST' autoComplete='off'>
         <label>Username: </label>

@@ -7,15 +7,14 @@ People are scared to invest due to lack of knowledge & financial risk. This will
 
 
 3. What is the solution?
-A tool that gives people an account, a set salary savings per week, track S&P 500 as well as their individual stock prices, ability for users to buy & sell.
-
-
-
+A tool that gives people an account, ability for users to buy & sell,  a set salary savings per week, track S&P 500 as well as their individual stock prices, 
 
 
 4. What is the MVP scope? (core features you must get working)
---IN PROGRESS-- 
-user feature to buy and sell stocks
+--IN PROGRESS--
+Fixing state update
+new features like adding salary based on date creation
+track other stock prices 
 
 -----DONE----
 Display website,
@@ -25,15 +24,16 @@ create cookie and track cookie
 retrieve user info using cookie and display on page, username & buying power
 retrive S&P 500 data using an api call
 display S&P 500 data via a graph
-
-
+user feature to buy and sell stocks
 
 
 
 5. What are the tough technical challenges involved with solving this problem?
-* API call to retrieve S&P 500 stock price as well as its individual companies.
-* Saving user information in a database.
-* Automatic rendering of stock prices.
+* API call to retrieve S&P 500 stock price and getting pass cor by utilizing axios and proxie server
+* Figuring out Chart.js and displaying graph on page
+* Learning to use Routes and Route to redirect rendering based on server input
+* Combining two routes together to render at the same time was tricky, needed a separate parent combined route component
+* Sending data from server to front end react component via direct html injection
 
 
 6. What are the stretch goals?

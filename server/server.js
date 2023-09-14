@@ -20,8 +20,6 @@ mongoose.connect(mongoURI, {
     console.error('Error connecting to MongoDB:', err);
   });
 
-
-
 // Handle parsing request body & cookies 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

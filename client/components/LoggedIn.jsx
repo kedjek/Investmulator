@@ -6,6 +6,9 @@ const LoggedIn = (props) => {
   const apiUrl = 'http://localhost:3000/api/sp500';
 
   const [value, setValue] = useState(0);
+  const [user, setUser] = useState(window.userData.username);
+  const [buyingPower, setBP] = useState(window.userData.buyingpower);
+  const [shares, setShares] = useState(Number(window.userData.holdings.SP500));
 
   useEffect(() => {
     axios
@@ -21,32 +24,98 @@ const LoggedIn = (props) => {
       .catch((err) => {
         console.error('Error fetching data:', err);
       });
-  }, []); // Empty dependency array means this effect will run once on component mount
+    axios
+      .get('/api')
+      .then((response) => {
+        if (response.status === 200) {
+          setBP(window.userData.buyingpower);
+          setShares(Number(window.userData.holdings.SP500));
+        } else {
+          console.error('Server responded with an error:', response.statusText);
+        }
+      })
+      .catch((err) => {
+        console.error('Error fetching data:', err);
+      });
+  }, []); 
 
-  const user = window.userData.username;
-  const buyingPower = window.userData.buyingpower;
-  const SP500 = window.userData.holdings.SP500;
+
+  const handlePutRequest = () => {
+    const formData = {
+      user: user,
+      action: document.querySelector('.select').value,
+      ticker: document.querySelector('.select1').value,
+      quantity: document.querySelector('.buyandsellInput').value,
+      cost: value
+    };
+
+    axios
+      .put('/api/update', formData)
+      .then((response) => {
+        if (response.status === 200) {
+          console.log('PUT request was successful.');
+          // Redirect to the desired URL here if needed
+        } else {
+          console.error('Server responded with an error:', response.statusText);
+        }
+      })
+      .catch((err) => {
+        console.error('Error making PUT request:', err);
+      });
+  };
+
+  const net = (shares * value + Number(buyingPower));
+  const formattedNet = net.toLocaleString('en-US', {
+    style: 'currency',
+    currency: 'USD',
+    minimumFractionDigits: 2, 
+    maximumFractionDigits: 2, 
+  });
+  const formattedBP = Number(buyingPower).toLocaleString('en-US', {
+    style: 'currency',
+    currency: 'USD',
+    minimumFractionDigits: 2, 
+    maximumFractionDigits: 2, 
+  });
+  const formattedValue = Number(value).toLocaleString('en-US', {
+    style: 'currency',
+    currency: 'USD',
+    minimumFractionDigits: 2, 
+    maximumFractionDigits: 2, 
+  });
+
 
   return (
     <header>
       <h2>User: {user}<br/>
-          Buying Power: {buyingPower}<br/>
-          SP500 Stocks: {SP500} at {value} per stock<br/><br/>
-          Net Worth: {buyingPower + (SP500 * value)}
+          Buying Power: {formattedBP}<br/>
+          SP500 Stocks: {shares} at {formattedValue} per stock<br/><br/>
+          Net Worth: {formattedNet}
       </h2>
-      <div className='container'>
+      <form className='container'>
         <box>
           <div className='dropdown'>
-            <select>
+            <select className='select'>
               <option className='options' value='buy'>Buy</option>
               <option className='options' value='sell'>Sell</option>
             </select>
+            <div className='tickers'>Tickers</div>
+            <div>
+              <select className='select1'>
+                <option value='SP500'>SP500</option>
+              </select> @ {value}
+            </div>
+            <div className='quantity'>
+              <input className='buyandsellInput' placeholder='# of stocks' type='number' min='0'></input>
+              <label>Quantity</label>
+            </div>
           </div>
-          <button className='buyandsell' type='submit'>Submit</button>
+          <button className='buyandsell' onClick={handlePutRequest}>Submit</button>
         </box>
-      </div>
+      </form>
     </header>
   );
 };
+
 
 export default LoggedIn;

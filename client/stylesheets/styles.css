@@ -18,11 +18,7 @@ button {
   width: 6em;
   margin-left: 10em;
 }
-form {
-  max-width: 20em;
-  margin: 0 auto;
-  text-align: right;
-}
+
 header{
   display:flex;
   justify-content: space-between;
@@ -45,19 +41,25 @@ input {
   border-radius: 0.3em;
   font-size: 1em;
 }
-select{
-  margin-top: 0.7em;
+.select{
+  margin-top: 0.1em;
   text-align: center;
   background-color: rgba(200, 226, 58, 0.608);
   font-size: 1.2em;
   width:7em;
+}
+.select1{
+  text-align: center;
+  background-color: rgba(200, 226, 58, 0.608);
+  font-size: 0.8em;
+  width:5em;
 }
 .buyandsell{
   background-color: #608cb8;
   color: #fff;
   border: none;
   cursor: pointer;
-  margin-top: 8em;
+  margin-top: 2em;
   margin-left: 0;
 }
 .chart{
@@ -66,6 +68,9 @@ select{
   height: 60em;
 }
 .container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
   width: 10em;
   height: 12em;
   border: 2px solid black;
@@ -73,10 +78,32 @@ select{
   margin-right: 0%;
   margin-left:auto;
 }
-.login{
-  margin-top: 6em;
+.buyandsellInput{
+  padding: 0.1em;
+  margin-bottom: 0em;
+  border: 0.1em solid #ccc;
+  border-radius: 0.2em;
+  font-size: 0.8em;
+  width: 5.5em;
+  text-align: center;
 }
-
+.loginform {
+  max-width: 20em;
+  margin: 6em auto;
+  text-align: right;
+}
 .options{
   font-size: 0.8em;
+}
+.tickers{
+  font-style: italic;
+  margin-top: 0.3em;
+  font-size:1.3em;
+}
+.quantity{
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 0.5em;
 }

@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 const sessionSchema = new Schema ({
   cookieID: {type: String, required: true, unique: true},
-  createdAt: {type: Date, expires: 30, default: Date.now},
+  createdAt: {type: Date, expires: 300000, default: Date.now},
   user: {type: Object, default: {}}
 });
 
