@@ -4,7 +4,7 @@ const CreateUser = (props) => {
 
   return (
     <header>
-      <h2>Sign Up</h2>
+      <h1>Sign Up</h1>
       <form action='/api/createuser' method='POST' autoComplete='off'>
         <label>Username: </label>
         <input id='usernameInput' name='username' placeholder='Username' required></input>

@@ -17,6 +17,7 @@ userController.createUser = async (req, res, next) => {
       message: {err: `the error code: ${err}`}
     });
   }
+
 };
 
 userController.verifyUser = async (req, res, next) => {

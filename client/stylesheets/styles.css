@@ -8,6 +8,9 @@ header{
   margin-bottom: 5em;
   text-align: center;
 }
+h2{
+  text-align: left;
+}
 form {
   max-width: 20em;
   margin: 0 auto;

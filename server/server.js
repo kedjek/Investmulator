@@ -1,6 +1,9 @@
 const path = require('path');
 const express = require('express');
 const mongoose = require('mongoose');
+const cookieParser = require('cookie-parser');
+const session = require('express-session');
+const cors = require('cors');
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -19,13 +22,31 @@ mongoose.connect(mongoURI, {
 
 
 
-// Handle parsing request body
+// Handle parsing request body & cookies 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
+app.use(cors({ origin: 'http://localhost:8080'}));
+app.use(
+  session({
+    secret: 'A really secure secret key', // Replace with a secret key
+    resave: false,
+    saveUninitialized: true,
+  })
+);
 
 
 // statically serve everything in the dist folder on route '/'
-app.use(express.static(path.join(__dirname, '../dist')));
+app.use(express.static(path.join(__dirname, '../dist')));// Redirect to the homepage after destroying the session
+// app.get('/', (req, res) => {
+//   console.log(req.session);
+//   req.session.destroy(err => {
+//     if (err) {
+//       console.error('Error destroying session:', err);
+//     }
+//   });
+// });
+
 // Serve static CSS files from the 'css' folder within 'client'
 app.use('/stylesheets', express.static(path.join(__dirname, '../client/stylesheets')));
 // Serve api routing when creating user / logging in
@@ -38,7 +59,6 @@ app.use('/api', apiRouter);
 app.use((req, res) => res.status(404).send('This is not the page you\'re looking for...'));
 
 app.use((err, req, res, next) => {
-  console.log('IM IN THE GLOBAL ERRRORRR');
   const defaultErr = {
     log: 'Express error handler caught unknown middleware error',
     status: 500,

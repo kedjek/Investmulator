@@ -2,7 +2,8 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Login from './components/Login';
 import CreateUser from './components/CreateUser';
-import LoggedIn from './components/LoggedIn';
+import CombinedChartAndLoggedIn from './components/CombinedChartAndLoggedIn';
+import '../node_modules/react-chartjs-2';
 
 import './stylesheets/styles.css';
 
@@ -11,9 +12,9 @@ const App = props => {
     <div className='router'>
       <main>
         <Routes>
-          <Route path="/" element={<Login/>}/>
-          <Route path="/api" element={<LoggedIn/>}/>
-          <Route path="/api/createuser" element={<CreateUser/>} />
+          <Route path="/" element={<Login />} />
+          <Route path="/api" element={<CombinedChartAndLoggedIn />} /> 
+          <Route path="/api/createuser" element={<CreateUser />} />
         </Routes>
       </main>
     </div>
