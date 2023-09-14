@@ -31,7 +31,7 @@ const LoggedIn = (props) => {
     <header>
       <h2>User: {user}<br/>
           Buying Power: {buyingPower}<br/>
-          SP500 Stocks: {SP500} at {value} per stock<br/>
+          SP500 Stocks: {SP500} at {value} per stock<br/><br/>
           Net Worth: {buyingPower + (SP500 * value)}
       </h2>
     </header>
