@@ -49,24 +49,30 @@ const SP500Chart = () => {
       });
   }, []); // Empty dependency array means this effect will run once on component mount
 
+  const options = {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: 'top',
+      },
+    },
+  };
+
+  const data = {
+    labels,
+    datasets: [
+      {
+        label: 'S&P 500',
+        data: values,
+        backgroundColor: 'rgb(43, 140, 201)',
+      },
+    ],
+  };
+
   return (
-    <div>
+    <div className='chart'>
       <h1>Data Chart</h1>
-      <Line
-        data={{
-          labels: labels,
-          datasets: [
-            {
-              label: 'S&P 500',
-              data: values,
-              backgroundColor: [
-                'rgba(53, 21, 412, 0.2)',
-                'rgba(151, 241, 231, 0.2)'
-              ]
-            }
-          ]
-        }}
-      />
+      <Line options = {options}  data={data}/>
     </div>
   );
 };

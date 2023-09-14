@@ -1,33 +1,12 @@
+a{
+  color:cornflowerblue;
+}
 body {
     line-height: 1.5;
     font-family: 'Source Sans Pro', sans-serif;
     background-color: rgba(238, 172, 86, 0.719);
-  }
-header{
-  margin-top: 3em;
-  margin-bottom: 5em;
-  text-align: center;
-}
-h1{
-  text-align: center;
-}
-h2{
-  text-align: left;
-}
-form {
-  max-width: 20em;
-  margin: 0 auto;
-  text-align: right;
-}
 
-input {
-  padding: 0.3em;
-  margin-bottom: 1em;
-  border: 0.1em solid #ccc;
-  border-radius: 0.3em;
-  font-size: 1em;
 }
-
 button {
   padding: 0.7em;
   background-color: #007bff;
@@ -39,7 +18,65 @@ button {
   width: 6em;
   margin-left: 10em;
 }
+form {
+  max-width: 20em;
+  margin: 0 auto;
+  text-align: right;
+}
+header{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 3em;
+  margin-bottom: 5em;
+  text-align: center;
+}
+h1{
+  text-align: center;
+}
+h2{
+  text-align: left;
+  margin: 0 0;
+}
+input {
+  padding: 0.3em;
+  margin-bottom: 1em;
+  border: 0.1em solid #ccc;
+  border-radius: 0.3em;
+  font-size: 1em;
+}
+select{
+  margin-top: 0.7em;
+  text-align: center;
+  background-color: rgba(200, 226, 58, 0.608);
+  font-size: 1.2em;
+  width:7em;
+}
+.buyandsell{
+  background-color: #608cb8;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin-top: 8em;
+  margin-left: 0;
+}
+.chart{
+  margin: 0 auto;
+  width: 60em;
+  height: 60em;
+}
+.container{
+  width: 10em;
+  height: 12em;
+  border: 2px solid black;
+  border-color: black;
+  margin-right: 0%;
+  margin-left:auto;
+}
+.login{
+  margin-top: 6em;
+}
 
-a{
-  color:cornflowerblue;
+.options{
+  font-size: 0.8em;
 }

@@ -34,6 +34,17 @@ const LoggedIn = (props) => {
           SP500 Stocks: {SP500} at {value} per stock<br/><br/>
           Net Worth: {buyingPower + (SP500 * value)}
       </h2>
+      <div className='container'>
+        <box>
+          <div className='dropdown'>
+            <select>
+              <option className='options' value='buy'>Buy</option>
+              <option className='options' value='sell'>Sell</option>
+            </select>
+          </div>
+          <button className='buyandsell' type='submit'>Submit</button>
+        </box>
+      </div>
     </header>
   );
 };
